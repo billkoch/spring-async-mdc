@@ -16,6 +16,7 @@ public class MyAsyncService implements AsyncService {
 	@Async("threadPoolExecutor")
 	public Future<String> doWork() {
 		LOG.debug("Doing work");
-		return new AsyncResult<String>("Finished work");
+		LOG.debug("Finished doing work");
+		return new AsyncResult<String>("some result");
 	}
 }

@@ -7,7 +7,7 @@
 	<logger name="com.billkoch" additivity="false" level="trace">
 		<appender-ref ref="stdout" />
 	</logger>
-	<logger name="org.springframework" additivity="false" level="trace">
+	<logger name="org.springframework" additivity="false" level="error">
 		<appender-ref ref="stdout" />
 	</logger>
 	<root level="error">
