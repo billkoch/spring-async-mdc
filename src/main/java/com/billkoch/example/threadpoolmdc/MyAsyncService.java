@@ -3,6 +3,7 @@ package com.billkoch.example.threadpoolmdc;
 import java.util.concurrent.Future;
 
 import org.slf4j.Logger;
+import org.slf4j.MDC;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.AsyncResult;
 import org.springframework.stereotype.Component;
@@ -17,6 +18,6 @@ public class MyAsyncService implements AsyncService {
 	public Future<String> doWork() {
 		LOG.debug("Doing work");
 		LOG.debug("Finished doing work");
-		return new AsyncResult<String>("some result");
+		return new AsyncResult<String>(MDC.get("trackingId"));
 	}
 }
