@@ -42,9 +42,9 @@ public class MDCAwareAnnotationAsyncExecutionInterceptor extends AnnotationAsync
 	
 	private class MDCAwareCallable implements Callable<Object> {
 
-		private MethodInvocation invocation;
+		private final MethodInvocation invocation;
 
-		private Map mdcContextMap;
+		private final Map mdcContextMap;
 
 		public MDCAwareCallable(final MethodInvocation invocation, Map mdcContextMap) {
 			this.invocation = invocation;

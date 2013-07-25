@@ -24,15 +24,14 @@
 	<task:executor id="threadPoolExecutor" pool-size="5" queue-capacity="100" />
  -->
 
-	<bean id="mdcAwareAsyncAnnotationAdvisor" class="com.billkoch.example.threadpoolmdc.spring.extension.MDCAwareAsyncAnnotationAdvisor" />
-		
 	<bean class="com.billkoch.example.threadpoolmdc.spring.extension.MDCAwareAsyncAnnotationBeanPostProcessor"
 		p:executor-ref="defaultExecutor" />
 
 	<bean id="defaultExecutor" class="org.springframework.core.task.SimpleAsyncTaskExecutor" />
 
 	<bean id="threadPoolExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolExecutorFactoryBean"
-		p:corePoolSize="5"
+		p:corePoolSize="1"
+		p:maxPoolSize="1"
 		p:queueCapacity="100"
 		p:waitForTasksToCompleteOnShutdown="true" />
 </beans>
